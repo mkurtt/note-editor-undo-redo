@@ -10,7 +10,7 @@ typedef struct  Stack{
 } Stack;
 
 Stack undoStack = {.top = -1};
-Stack rendoStack = {.top = -1};
+Stack redoStack = {.top = -1};
 
 int isEmpty(Stack s){
     if(s.top == -1){
@@ -44,13 +44,13 @@ char *pop(Stack *s){ // 10 20 30 40 50
 int main(void) {
 
     push(&undoStack, "Name1");
-    push(&rendoStack, "Name2");
+    push(&redoStack, "Name2");
     push(&undoStack, "Name3");
-    push(&rendoStack, "Name4");
+    push(&redoStack, "Name4");
     push(&undoStack, "Name5");
     
     printf("%s\n", pop(&undoStack));
-    printf("%s\n" ,pop(&rendoStack));
+    printf("%s\n" ,pop(&redoStack));
 
 
     return 0;
